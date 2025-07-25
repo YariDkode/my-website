@@ -1,0 +1,47 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f0f8ff;
+    color: #333333;
+    padding: 1rem;
+    margin: 0;
+}
+
+main {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Class selector */
+.main-text {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+/* Relational selector */
+main ul {
+    list-style-type: square;
+    padding-left: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Combination selector */
+h1.main-title {
+    font-size: 2rem;
+    color: rgb(29, 10, 101);
+    margin-bottom: 1rem;
+}
+
+/* Pseudo-class */
+a:hover {
+    text-decoration: underline;
+    color: #0077cc;
+}
+
+/* ID selector */
+#footer-text {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #555555;
+    margin-top: 2rem;
+}
