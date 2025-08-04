@@ -1,90 +1,147 @@
+/* === Global Styles === */
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    background-color: #f0f8ff;
-    color: #333333;
-    padding: 1rem;
-    margin: 0;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 1rem;
+  background: linear-gradient(135deg, #e0f7fa, #80deea);
+  color: #333;
+  box-sizing: border-box;
 }
 
+/* Make sure all elements include padding and border in their width/height */
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+/* === Navigation Menu === */
+.main-nav {
+  background-color: #1d0a65;
+  padding: 0.5rem 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.main-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.main-nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 0.5rem 0.75rem;
+  display: inline-block;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.main-nav a:hover,
+.main-nav a:focus {
+  background-color: #4a3fbf;
+  outline: none;
+}
+
+/* === Main Content === */
 main {
-    max-width: 800px;
-    margin: 0 auto;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 1rem;
+  background-color: #ffffffcc; /* white with transparency for readability */
+  border: 2px solid #1d0a65; /* border around main content */
+  border-radius: 8px;
 }
 
-/* Class selector */
-.main-text {
-    font-size: 1rem;
-    margin-bottom: 1rem;
+/* Main headings */
+h1.main-title, main h1 {
+  font-size: 2rem;
+  color: #1d0a65;
+  margin-bottom: 1rem;
 }
 
-/* Relational selector */
+/* Headings inside main */
+main h2 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+/* Paragraphs */
+.main-text, main p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* Lists */
 main ul {
-    list-style-type: square;
-    padding-left: 2rem;
-    margin-bottom: 1.5rem;
+  list-style-type: square;
+  padding-left: 1.5rem;
+  margin-bottom: 1.5rem;
 }
 
-/* Combination selector */
-h1.main-title {
-    font-size: 2rem;
-    color: rgb(29, 10, 101);
-    margin-bottom: 1rem;
-
-    /* ✅ Added background gradient, padding, and border-radius */
-    background: linear-gradient(to right, #d4e0f5, #f0f8ff);
-    padding: 1rem;
-    border-radius: 6px;
+/* Links */
+a {
+  color: #0077cc;
 }
 
-/* Pseudo-class */
-a:hover {
-    text-decoration: underline;
-    color: #0077cc;
+a:hover,
+a:focus {
+  text-decoration: underline;
 }
 
-/* ID selector */
-#footer-text {
-    text-align: center;
-    font-size: 0.9rem;
-    color: #555555;
-    margin-top: 2rem;
-}
-
-
-/* Margin and padding for image */
+/* === Images === */
 img {
-    margin: 1rem 0;
-    padding: 0.5rem;
-    border-radius: 8px;
+  max-width: 100%;  /* Make image scalable/fluid */
+  height: auto;
+  display: block;
+  margin: 1rem 0;
+  border: 3px solid #1d0a65; /* border around images */
+  border-radius: 8px;
 }
 
-/* Extra margin for UL list */
-ul {
-    margin-top: 1rem;
-    margin-bottom: 1.5rem;
-}
-
-/* Footer with border and spacing */
+/* === Footer === */
 footer {
-    padding: 1rem 0;
-    margin-top: 2rem;
-    border-top: 2px solid #ccc;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #555;
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid #ccc;
 }
 
-/* Two-column layout for about.html */
-.columns {
-    display: flex;
-    gap: 2rem;
-    margin-top: 1rem;
-    flex-wrap: wrap;
+/* === Media Queries === */
+
+/* For tablets and smaller desktops */
+@media (max-width: 768px) {
+  .main-nav ul {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  main {
+    padding: 0.5rem;
+    border-width: 1px;
+  }
 }
 
-.column {
-    flex: 1;
-    min-width: 250px;
-    background-color: #f9f9f9;
-    padding: 1rem;
-    border: 1px solid #ddd;
-    border-radius: 6px;
+/* For mobile phones */
+@media (max-width: 480px) {
+  body {
+    padding: 0.5rem;
+  }
+
+  main {
+    margin: 0 0.5rem;
+    padding: 0.75rem;
+    border-width: 1px;
+  }
+
+  .main-nav a {
+    padding: 0.5rem;
+  }
 }
