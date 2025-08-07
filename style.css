@@ -145,3 +145,41 @@ footer {
     padding: 0.5rem;
   }
 }
+/* === Travel Gallery === */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.gallery figure {
+  margin: 0;
+  background: #ffffffdd;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 0.5rem;
+}
+
+.gallery img {
+  width: 100%;
+  height: auto;
+  border: 0;         /* avoid double border (global img already adds one) */
+  border-radius: 6px;
+}
+
+.gallery figcaption {
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+  color: #444;
+  text-align: center;
+}
+
+/* Responsive: 4 → 2 → 1 columns */
+@media (max-width: 900px) {
+  .gallery { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 600px) {
+  .gallery { grid-template-columns: 1fr; }
+}
