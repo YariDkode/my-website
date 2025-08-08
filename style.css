@@ -14,7 +14,7 @@ body {
   box-sizing: inherit;
 }
 
-/* === Navigation Menu === */
+/* === Flexbox #1: Navigation Menu === */
 .main-nav {
   background-color: #1d0a65;
   padding: 0.5rem 1rem;
@@ -25,7 +25,7 @@ body {
   list-style: none;
   margin: 0;
   padding: 0;
-  display: flex;
+  display: flex; /* Flexbox for navigation menu */
   gap: 1rem;
   flex-wrap: wrap;
 }
@@ -114,40 +114,31 @@ footer {
   border-top: 1px solid #ccc;
 }
 
-/* === Media Queries === */
-
-/* For tablets and smaller desktops */
-@media (max-width: 768px) {
-  .main-nav ul {
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-
-  main {
-    padding: 0.5rem;
-    border-width: 1px;
-  }
+/* === Flexbox #2: About page two-column layout === */
+.about-flex {
+  display: flex;              /* activate flexbox */
+  gap: 2rem;                   /* space between text and image */
+  align-items: center;         /* vertically align items */
+  margin-top: 1.5rem;
 }
 
-/* For mobile phones */
-@media (max-width: 480px) {
-  body {
-    padding: 0.5rem;
-  }
-
-  main {
-    margin: 0 0.5rem;
-    padding: 0.75rem;
-    border-width: 1px;
-  }
-
-  .main-nav a {
-    padding: 0.5rem;
-  }
+.about-text {
+  flex: 1;                     /* text takes up equal space */
 }
-/* === Travel Gallery === */
+
+.about-image {
+  flex: 1;                     /* image takes up equal space */
+}
+
+.about-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* === Grid Layout: Travel page photo gallery === */
 .gallery {
-  display: grid;
+  display: grid; /* Grid layout for travel images */
   grid-template-columns: repeat(4, 1fr);
   gap: 1rem;
   margin-top: 1rem;
@@ -175,11 +166,57 @@ footer {
   text-align: center;
 }
 
-/* Responsive: 4 → 2 → 1 columns */
+/* Responsive: 4 → 2 → 1 columns for grid */
 @media (max-width: 900px) {
   .gallery { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 600px) {
   .gallery { grid-template-columns: 1fr; }
+}
+
+/* === Media Queries === */
+
+/* For medium screens/laptops */
+@media (max-width: 1024px) {
+  /* Adjust main content padding and borders */
+  main {
+    padding: 0.75rem;
+    border-width: 1px;
+  }
+}
+
+/* For tablets and smaller desktops */
+@media (max-width: 768px) {
+  .main-nav ul {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  main {
+    padding: 0.5rem;
+    border-width: 1px;
+  }
+
+  /* Stack About page columns vertically on tablets/phones */
+  .about-flex {
+    flex-direction: column;
+  }
+}
+
+/* For mobile phones */
+@media (max-width: 480px) {
+  body {
+    padding: 0.5rem;
+  }
+
+  main {
+    margin: 0 0.5rem;
+    padding: 0.75rem;
+    border-width: 1px;
+  }
+
+  .main-nav a {
+    padding: 0.5rem;
+  }
 }

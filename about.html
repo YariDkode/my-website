@@ -8,7 +8,7 @@
 </head>
 <body>
 
-  <!-- Navigation menu shared across all pages -->
+  <!-- Flexbox #1: Navigation menu (shared across all pages) -->
   <nav class="main-nav">
     <ul>
       <li><a href="index.html">Home</a></li>
@@ -19,20 +19,24 @@
 
   <main>
     <h1>About Us</h1>
-    <p>Welcome to our "About" page. This site is all about our journey living on the road while attending school full-time.</p>
 
-    <p>We are a married veteran couple traveling in our RV with our service dog Liz. Our goal is to share our experiences, challenges, and tips for living this lifestyle.</p>
+    <!-- Flexbox #2: Two-column layout for About page -->
+    <section class="about-flex">
+      <div class="about-text">
+        <p>We are a married veteran couple navigating college life while living full-time in our Lance travel trailer. “Rolling Through School” is our way of sharing what it’s like to balance coursework, travel, and the everyday adventures that come with RV living.</p>
 
-    <p>More content is coming soon — stay tuned!</p>
-
-    <!-- External link that opens in a new tab -->
-    <p>For more info on travel trailers, check out <a href="https://www.rvshare.com" target="_blank" rel="noopener noreferrer">RVshare</a>.</p>
+        <p>With our service dog, Liz, by our side, every day is a mix of learning and exploring. From quiet mornings studying by the mountains to long hikes on weekends, this journey is about chasing both our degrees and the freedom of the open road.</p>
+      </div>
+      <div class="about-image">
+        <img src="images/ourlittlefamily.jpg" alt="Our little family hiking: me, my husband, and Liz" />
+      </div>
+    </section>
 
   </main>
 
   <footer>
     <p id="footer-text">&copy; 2025 Rolling Through School | Learning on the go, one mile at a time</p>
   </footer>
-  
+
 </body>
 </html>
