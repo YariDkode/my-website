@@ -1,74 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8" /> <!-- Sets the character encoding to UTF-8 so all characters display correctly -->
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Travel - Rolling Through School</title>
-  <link rel="stylesheet" href="style.css" />
+  <!-- Makes the site responsive on mobile devices -->
+  <title>Travel - Rolling Through School</title> <!-- Page title shown in browser tab -->
+  <link rel="stylesheet" href="style.css" /> <!-- Links to my CSS file -->
 </head>
+
 <body>
 
   <!-- Navigation menu shared across all pages -->
   <nav class="main-nav">
     <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="travel.html">Travel</a></li>
+      <li><a href="index.html">Home</a></li> <!-- Link to homepage -->
+      <li><a href="about.html">About</a></li> <!-- Link to about page -->
+      <li><a href="travel.html">Travel</a></li> <!-- Link to travel page -->
     </ul>
   </nav>
 
   <main>
+    <!-- Main heading of the page -->
     <h1>Travel Adventures</h1>
-    <p>This page follows our student-on-the-road life with our service dog, Liz. Stay tuned for travel stories, tips, and photos from all the places we visit!.</p>
+    <!-- Intro paragraph about this page content -->
+    <p>This page follows our student-on-the-road life with our service dog, Liz. Stay tuned for travel stories, tips,
+      and photos from all the places we visit!.</p>
 
-    <!-- Same-page link now points to a real section with enough content to scroll -->
+    <!-- Internal link that jumps to the gallery section -->
     <p><a href="#gallery">See our latest stops</a></p>
 
     <section id="gallery">
+      <!-- Section heading for the photo gallery -->
       <h2>RV Life Photo Gallery</h2>
       <p>Scenes from recent days—class, camp, coffee, and Liz being Liz.</p>
 
+      <!-- Responsive image gallery -->
       <div class="gallery">
+
+        <!-- Images with caption -->
         <figure>
-          <img src="images/greenmountain_husband_hike.jpg" alt="Hike at Green Mountain with my husband">
+          <div class="thumb"> <!-- Fixed aspect-ratio thumbnail container for better sizing and more aling look -->
+            <img src="images/greenmountain_husband_hike.jpg" alt="Hike at Green Mountain with my husband"
+              loading="lazy">
+          </div>
           <figcaption>Husband taking in a view from Green Mountain hike.</figcaption>
         </figure>
+
         <figure>
-          <img src="images/hike.jpg" alt="Trail view on a day hike">
+          <div class="thumb">
+            <img src="images/hike.jpg" alt="Trail view on a day hike" loading="lazy">
+          </div>
           <figcaption>Quick trail break between study sessions.</figcaption>
         </figure>
+
         <figure>
-          <img src="images/breakfastandliz.jpg" alt="Breakfast setup with Liz nearby">
+          <div class="thumb">
+            <img src="images/breakfastandliz.jpg" alt="Breakfast setup with Liz nearby" loading="lazy">
+          </div>
           <figcaption>Breakfast and Lizzy.</figcaption>
         </figure>
+
         <figure>
-          <img src="images/family_patio.jpg" alt="Family time on the patio by the trailer">
+          <div class="thumb">
+            <img src="images/family_patio.jpg" alt="Family time on the patio by the trailer" loading="lazy">
+          </div>
           <figcaption>Family patio time after class.</figcaption>
         </figure>
+
         <figure>
-          <img src="images/trailer_parked.jpg" alt="Our trailer parked at camp">
+          <div class="thumb">
+            <img src="images/trailer_parked.jpg" alt="Our trailer parked at camp" loading="lazy">
+          </div>
           <figcaption>Home base for the rest of semester.</figcaption>
         </figure>
+
         <figure>
-          <img src="images/patio_setup.jpg" alt="Outdoor patio setup with chairs and table">
+          <div class="thumb">
+            <img src="images/patio_setup.jpg" alt="Outdoor patio setup with chairs and table" loading="lazy">
+          </div>
           <figcaption>Simple and cozy patio setup.</figcaption>
         </figure>
+
         <figure>
-          <img src="images/takingacutebreak.jpg" alt="Service dog Liz taking a cute break">
+          <div class="thumb">
+            <img src="images/takingacutebreak.jpg" alt="Service dog Liz taking a cute break" loading="lazy">
+          </div>
           <figcaption>Liz taking a cute break (as usual).</figcaption>
         </figure>
+
         <figure>
-          <img src="images/greenmountain_hike.jpg" alt="View from Green Mountain hike">
+          <div class="thumb">
+            <img src="images/greenmountain_hike.jpg" alt="View from Green Mountain hike" loading="lazy">
+          </div>
           <figcaption>Another Green Mountain view we loved.</figcaption>
         </figure>
+
       </div>
     </section>
   </main>
 
+  <!-- Footer with copyright -->
   <footer>
     <p id="footer-text">&copy; 2025 Rolling Through School | Learning on the go, one mile at a time</p>
   </footer>
 
 </body>
-</html>
 
+</html>

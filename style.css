@@ -1,39 +1,61 @@
-/* === Global Styles === */
-body {
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
-  margin: 0;
-  padding: 1rem;
-  background: linear-gradient(135deg, #e0f7fa, #80deea);
-  color: #333;
-  box-sizing: border-box;
+/* Main colors, basics */
+:root {
+  --brand: #1d0a65;
+  /* My main color for the whole site */
 }
 
-/* Make sure all elements include padding and border in their width/height */
-*, *::before, *::after {
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* Makes the sizes easier to deal with */
+  font-family: Inter, system-ui, Arial, sans-serif;
+  /* Default text font */
+  line-height: 1.6;
+  color: #333;
+  /* Dark gray text */
+  background: linear-gradient(135deg, #e0f7fa, #80deea);
+  /* Pretty background gradient */
+}
+
+/* Makes the box-sizing work for all elements */
+*,
+*::before,
+*::after {
   box-sizing: inherit;
 }
 
-/* === Flexbox #1: Navigation Menu === */
+/* Headings use a different font so they stand out */
+h1,
+h2,
+h3 {
+  font-family: Poppins, Inter, Arial, sans-serif;
+}
+
+/* Top navigation bar */
 .main-nav {
-  background-color: #1d0a65;
+  background-color: var(--brand);
   padding: 0.5rem 1rem;
   margin-bottom: 1.5rem;
 }
 
 .main-nav ul {
   list-style: none;
+  /* no bullets */
   margin: 0;
   padding: 0;
-  display: flex; /* Flexbox for navigation menu */
+  display: flex;
   gap: 1rem;
-  flex-wrap: wrap;
+  justify-content: space-evenly;
+  /* spread links across bar */
+  flex-wrap: nowrap;
 }
 
 .main-nav a {
-  color: white;
+  color: #fff;
   text-decoration: none;
-  font-weight: bold;
+  font-weight: 600;
   padding: 0.5rem 0.75rem;
   display: inline-block;
   border-radius: 4px;
@@ -43,48 +65,142 @@ body {
 .main-nav a:hover,
 .main-nav a:focus {
   background-color: #4a3fbf;
+  /* darker color when mouse over */
   outline: none;
 }
 
-/* === Main Content === */
+/* Container of main page */
 main {
-  max-width: 900px;
+  max-width: 1000px;
   margin: 0 auto;
+  /* center the main content */
   padding: 1rem;
-  background-color: #ffffffcc; /* white with transparency for readability */
-  border: 2px solid #1d0a65; /* border around main content */
-  border-radius: 8px;
+  background-color: #ffffffcc;
+  /* slightly see-through white */
+  border: 2px solid var(--brand);
+  border-radius: 12px;
 }
 
-/* Main headings */
-h1.main-title, main h1 {
-  font-size: 2rem;
-  color: #1d0a65;
+/* Hero section in the homepage */
+.hero {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+  min-height: 40vh;
+  /* this makes it tall enough */
+  background:
+    linear-gradient(to bottom, rgba(0, 0, 0, .35), rgba(0, 0, 0, .45)),
+    url('images/Mt.Raineir.jpg') center/cover no-repeat;
+  /* dark layer + picture */
+}
+
+.hero-inner {
+  color: #fff;
+  padding: clamp(1rem, 4vw, 3rem);
+  max-width: 900px;
+}
+
+.hero h1 {
+  font-size: clamp(1.75rem, 4.5vw, 3rem);
+  margin: 0 0 .5rem;
+}
+
+.hero p {
+  font-size: clamp(1rem, 2.2vw, 1.2rem);
+  margin: 0 0 1rem;
+  max-width: 60ch;
+  /* this keeps text from getting too wide */
+}
+
+/*  Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  padding: .6rem 1rem;
+  border-radius: 999px;
+  /* makes the button round */
+  text-decoration: none;
+  border: 1px solid #fff;
+  color: #fff;
+  background: transparent;
+  transition: background .2s ease, transform .2s ease;
+}
+
+.btn:hover {
+  background: rgba(255, 255, 255, .12);
+  transform: translateY(-1px);
+  /* tiny lift effect */
+}
+
+.btn.primary {
+  background: #4a3fbf;
+  border-color: #4a3fbf;
+}
+
+.btn.primary:hover {
+  background: #3a31a0;
+}
+
+/* puts hero buttons in the bottom right corner, use clamp also found outside our book */
+.hero-actions--bottom-right {
+  position: absolute;
+  right: clamp(0.75rem, 3vw, 1.25rem);
+  bottom: clamp(0.75rem, 3vw, 1.25rem);
+}
+
+/* Lists and inline images for homepage */
+.home-list {
+  margin-top: 1rem;
+}
+
+.home-list ul {
+  padding-left: 1.25rem;
   margin-bottom: 1rem;
 }
 
-/* Headings inside main */
+.home-list li {
+  margin-bottom: .4rem;
+}
+
+/* side-by-side small image + text */
+.inline-media {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.inline-media img.inline-thumb {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border: 3px solid var(--brand);
+  border-radius: 12px;
+  margin: 0;
+}
+
+/* Text styles */
+h1.main-title,
+main h1 {
+  font-size: 2rem;
+  color: var(--brand);
+  margin-bottom: 1rem;
+}
+
 main h2 {
   font-size: 1.5rem;
   color: #333;
-  margin-top: 1.5rem;
+  margin-top: 1.25rem;
   margin-bottom: 0.75rem;
 }
 
-/* Paragraphs */
-.main-text, main p {
+.main-text,
+main p {
   font-size: 1rem;
   margin-bottom: 1rem;
 }
 
-/* Lists */
-main ul {
-  list-style-type: square;
-  padding-left: 1.5rem;
-  margin-bottom: 1.5rem;
-}
-
-/* Links */
 a {
   color: #0077cc;
 }
@@ -94,52 +210,58 @@ a:focus {
   text-decoration: underline;
 }
 
-/* === Images === */
+/*  Images */
 img {
-  max-width: 100%;  /* Make image scalable/fluid */
+  max-width: 100%;
   height: auto;
   display: block;
   margin: 1rem 0;
-  border: 3px solid #1d0a65; /* border around images */
+  border: 3px solid var(--brand);
   border-radius: 8px;
 }
 
-/* === Footer === */
-footer {
-  text-align: center;
-  font-size: 0.9rem;
-  color: #555;
-  margin-top: 2rem;
-  padding-top: 1rem;
-  border-top: 1px solid #ccc;
+/* Frames to make fixed shapes for images */
+.frame-4x3 {
+  aspect-ratio: 4 / 3;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
 }
 
-/* === Flexbox #2: About page two-column layout === */
+.frame-16x9 {
+  aspect-ratio: 16 / 9;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* About page layout */
 .about-flex {
-  display: flex;              /* activate flexbox */
-  gap: 2rem;                   /* space between text and image */
-  align-items: center;         /* vertically align items */
+  display: flex;
+  gap: 2rem;
+  align-items: center;
   margin-top: 1.5rem;
 }
 
-.about-text {
-  flex: 1;                     /* text takes up equal space */
+.about-text,
+.about-image {
+  flex: 1;
 }
 
-.about-image {
-  flex: 1;                     /* image takes up equal space */
+.about-alt {
+  flex-direction: row-reverse;
+  /* switches picture to the left */
 }
 
 .about-image img {
-  max-width: 100%;
-  height: auto;
   border-radius: 8px;
 }
 
-/* === Grid Layout: Travel page photo gallery === */
+/* Travel page photo gallery */
 .gallery {
-  display: grid; /* Grid layout for travel images */
+  display: grid;
   grid-template-columns: repeat(4, 1fr);
+  /* 4 across */
   gap: 1rem;
   margin-top: 1rem;
 }
@@ -149,48 +271,70 @@ footer {
   background: #ffffffdd;
   border: 1px solid #ccc;
   border-radius: 8px;
-  padding: 0.5rem;
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  /* picture on top, caption below */
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.gallery figure:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, .12);
 }
 
 .gallery img {
   width: 100%;
   height: auto;
-  border: 0;         /* avoid double border (global img already adds one) */
-  border-radius: 6px;
+  object-fit: cover;
+  border: 0;
+  display: block;
+  /* rule to make pics the same height */
 }
 
 .gallery figcaption {
-  font-size: 0.9rem;
-  margin-top: 0.5rem;
-  color: #444;
+  font-size: .9rem;
+  padding: .5rem .75rem;
+  background: #fff;
   text-align: center;
+  border-top: 1px solid #e6e6e6;
 }
 
-/* Responsive: 4 → 2 → 1 columns for grid */
-@media (max-width: 900px) {
-  .gallery { grid-template-columns: repeat(2, 1fr); }
+/* Footer */
+footer {
+  text-align: center;
+  font-size: .9rem;
+  color: #555;
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid #ccc;
 }
 
-@media (max-width: 600px) {
-  .gallery { grid-template-columns: 1fr; }
-}
-
-/* === Media Queries === */
-
-/* For medium screens/laptops */
+/* Media queries for mobile and tablets */
 @media (max-width: 1024px) {
-  /* Adjust main content padding and borders */
   main {
     padding: 0.75rem;
     border-width: 1px;
   }
+
+  .gallery {
+    grid-template-columns: repeat(3, 1fr);
+    /* 3 across on smaller screens */
+  }
 }
 
-/* For tablets and smaller desktops */
+@media (max-width: 900px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+    /* 2 across */
+  }
+}
+
 @media (max-width: 768px) {
   .main-nav ul {
-    flex-direction: column;
-    gap: 0.5rem;
+    justify-content: flex-start;
+    flex-wrap: wrap;
   }
 
   main {
@@ -198,13 +342,25 @@ footer {
     border-width: 1px;
   }
 
-  /* Stack About page columns vertically on tablets/phones */
-  .about-flex {
+  .about-flex,
+  .about-alt {
     flex-direction: column;
+    /* stacks text and picture */
+  }
+
+  .inline-media {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }
 
-/* For mobile phones */
+@media (max-width: 600px) {
+  .gallery {
+    grid-template-columns: 1fr;
+    /* 1 across (full width) */
+  }
+}
+
 @media (max-width: 480px) {
   body {
     padding: 0.5rem;
@@ -219,4 +375,47 @@ footer {
   .main-nav a {
     padding: 0.5rem;
   }
+
+  .hero {
+    min-height: 32vh;
+    /* shorter hero for mobile */
+  }
+}
+
+/* Gallery layout tweak for auto fit */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  /* fits pictures nicely on all screens */
+  gap: 1rem;
+}
+
+/* Thumbnail container with same shape for all , to keep it visually better*/
+.gallery .thumb {
+  aspect-ratio: 4 / 3;
+  /* all pics same shape */
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Makes the picture fill the box without stretching */
+.gallery .thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+/* Slight zoom when mouse is over */
+.gallery .thumb img:hover {
+  transform: scale(1.05);
+}
+
+/* Captions in the gallery */
+.gallery figcaption {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #444;
+  margin-top: 0.5rem;
 }

@@ -1,14 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Rolling Through School</title>
+
+  <!-- Fonts and icons to make it look nicer -->
+  <!-- Google Fonts for better text styles -->
+  <!-- Font Awesome for cool icons like the map and user -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500;700&display=swap"
+    rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+  <!-- CSS file for all the styles -->
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
 
-  <!-- Navigation menu shared across all pages -->
+  <!-- Main navigation bar at the top of every page -->
+  <!-- Flexbox #1 for layout -->
   <nav class="main-nav">
     <ul>
       <li><a href="index.html">Home</a></li>
@@ -18,41 +30,61 @@
   </nav>
 
   <main>
-    <h1 class="main-title">Welcome to Rolling Through School</h1>
+    <!-- Hero section - Mt Rainier picture I took from the ferry at the top with title and buttons -->
+    <section class="hero">
+      <div class="hero-inner">
+        <h1>Rolling Through School</h1>
+        <p>Full-time RV life + college, with our service dog Liz. Real tips, routes, and lessons learned on the road.
+        </p>
 
-    <p class="main-text">Hey there! We are a married veteran couple living full-time in a travel trailer while
-      attending school. With our service dog, Liz, by our side, we want to experience freedom doing the RV lifestyle that lets us chase
-      our goals, beautiful sunsets, and a place to settle in the future when it is time.</p>
+        <!-- Buttons in the lower-right of the hero picture -->
+        <div class="hero-actions hero-actions--bottom-right">
+          <a class="btn primary" href="travel.html"><i class="fa-solid fa-map-location-dot" aria-hidden="true"></i>
+            Explore Travel</a>
+          <a class="btn" href="about.html"><i class="fa-solid fa-user" aria-hidden="true"></i> About Us</a>
+        </div>
+      </div>
+    </section>
 
-    <!-- Make image scalable -->
-    <img src="puppy_liz.jpg" alt="Liz on her beginner journey as a service dog" />
+    <!-- List of what you can find in my site -->
+    <section class="home-list">
+      <h2>What you will find here:</h2>
+      <ul>
+        <li>What it is like being student on the road</li>
+        <li>Small-space cooking adventures</li>
+        <li>Life with our service dog, Little Lizzy</li>
+        <li>Travel stories, study tips, how to use your veteran benefits, and future plans</li>
+      </ul>
 
-    <h2>What you will find here:</h2>
-    <ul>
-      <li>What it is like being student on the road</li>
-      <li>Small-space cooking adventures</li>
-      <li>Life with our service dog, Little Lizzy</li>
-      <li>Travel stories, study tips, how to use your veteran benefits, and future plans</li>
-    </ul>
+      <!-- Intro paragraph -->
+      <p class="main-text">This lifestyle has its challenges, but it's full of freedom, growth, and connection. We are
+        just getting started and are very excited you are here for the ride.</p>
 
-    <p class="main-text">This lifestyle has its challenges, but it's full of freedom, growth, and connection. We are
-      just getting started and are very excited you are here for the ride.</p>
+      <!-- Funny line about Liz and a small picture next to it -->
+      <div class="inline-media">
+        <p class="main-text" style="margin:0">
+          Liz totally runs the show — especially when snacks are involved.
+        </p>
+        <img class="inline-thumb" src="puppy_liz.jpg" alt="Liz as a puppy, supervising snacks">
+      </div>
 
-    <p class="main-text">Liz totally runs the show &mdash; especially when snacks are involved.</p>
+      <!-- Link that scrolls to bottom of page -->
+      <p><a href="#bottom">Jump to bottom of page</a></p>
 
-    <!-- Link that scrolls to the bottom of the same page -->
-    <p><a href="#bottom">Jump to bottom of page</a></p>
+      <!-- Info about where we go to school currently -->
+      <p class="main-text">We are currently attending classes online and on campus. Check it out at
+        <a href="https://www.olympic.edu" target="_blank" rel="noopener noreferrer">Olympic College</a>.
+      </p>
 
-    <p class="main-text">We are currently attending classes online and on campus. Check it out at
-      <a href="https://www.olympic.edu" target="_blank" rel="noopener noreferrer">Olympic College</a>.
-    </p>
-
-    <!-- Bottom section to scroll to -->
-    <h2 id="bottom">You're at the bottom of the page!</h2>
+      <!--  Bottom of page -->
+      <h2 id="bottom">You're at the bottom of the page!</h2>
+    </section>
   </main>
 
+  <!-- Footer at the bottom of every page -->
   <footer>
     <p id="footer-text">&copy; 2025 Rolling Through School | Learning on the go, one mile at a time</p>
   </footer>
 </body>
+
 </html>
