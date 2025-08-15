@@ -363,7 +363,8 @@ footer {
 
 @media (max-width: 480px) {
   body {
-    padding: 0.5rem;
+    /* no top padding so the nav can sit at the very top */
+    padding: 0 0.5rem 0.5rem;
   }
 
   main {
@@ -372,15 +373,26 @@ footer {
     border-width: 1px;
   }
 
+  /* nav bar alignment fix */
+  .main-nav {
+    margin-top: 0;
+    padding-top: 0.5rem;
+  }
+
+  .main-nav ul {
+    justify-content: center;
+    margin-top: 0;
+  }
+
   .main-nav a {
     padding: 0.5rem;
   }
 
   .hero {
     min-height: 32vh;
-    /* shorter hero for mobile */
   }
 }
+
 
 /* Gallery layout tweak for auto fit */
 .gallery {
@@ -425,7 +437,8 @@ footer {
   width: 100%;
   border-collapse: collapse;
   margin-top: 20px;
-  box-shadow: 0 0 10px rgba(29, 10, 101, 0.3); /* brand color shadow */
+  box-shadow: 0 0 10px rgba(29, 10, 101, 0.3);
+  /* brand color shadow */
 }
 
 .expenses-table caption {
@@ -436,7 +449,8 @@ footer {
 }
 
 .expenses-table th {
-  background-color: var(--brand); /* matches main site color */
+  background-color: var(--brand);
+  /* matches main site color */
   color: white;
   padding: 10px;
   text-align: left;
@@ -453,20 +467,24 @@ footer {
 
 .expenses-table tfoot td {
   font-weight: bold;
-  background-color: #e8e4f7; /* light purple to match */
+  background-color: #e8e4f7;
+  /* light purple to match */
 }
 
 /* --- Responsive Video Section Styling (Matches Site Brand) --- */
 .video-wrap {
   position: relative;
-  padding-bottom: 50%; /* slightly shorter than 16:9 */
+  padding-bottom: 50%;
+  /* slightly shorter than 16:9 */
   height: 0;
   overflow: hidden;
-  border: 4px solid var(--brand); /* brand color border */
+  border: 4px solid var(--brand);
+  /* brand color border */
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(29, 10, 101, 0.4);
   margin: 20px auto;
-  max-width: 640px; /* limits width so video is smaller */
+  max-width: 640px;
+  /* limits width so video is smaller */
 }
 
 .video-wrap iframe {
@@ -477,4 +495,3 @@ footer {
   height: 100%;
   border: none;
 }
-
