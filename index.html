@@ -6,37 +6,49 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Rolling Through School</title>
 
+  <!-- Favicons for browsers and devices -->
+  <link rel="icon" type="image/png" sizes="32x32" href="images/logo_32x32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="images/logo_512x512.png">
+  <link rel="apple-touch-icon" href="images/logo_512x512.png">
+
+
   <!-- Fonts and icons to make it look nicer -->
   <!-- Google Fonts for better text styles -->
   <!-- Font Awesome for cool icons like the map and user -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500;700&display=swap"
     rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-  <link rel="icon" type="image/png" href="images/logo_32x32.png">
-
 
   <!-- CSS file for all the styles -->
   <link rel="stylesheet" href="style.css" />
 </head>
 
-<body>
+<body class="home">
 
   <!-- Main navigation bar at the top of every page -->
   <!-- Flexbox #1 for layout -->
   <nav class="main-nav">
-    <ul>
-      <li><a href="index.html">Home</a></li>
+    <a class="brand" href="index.html">
+      <img src="images/logo_512x512.png" alt="Rolling Through School logo" class="brand-logo">
+      <span>Rolling Through School</span>
+    </a>
+
+    <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">☰</button>
+
+    <ul id="site-nav">
+      <li><a href="index.html" aria-current="page">Home</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="travel.html">Travel</a></li>
       <li><a href="resources.html">Resources</a></li>
     </ul>
   </nav>
 
+
   <main>
     <!-- Hero section - Mt Rainier picture I took from the ferry at the top with title and buttons -->
     <section class="hero">
       <div class="hero-inner">
-        <h1>  Rolling Through School</h1>
+        <h1> Rolling Through School</h1>
         <p>Full-time RV life + college, with our service dog Liz. Real tips, routes, and lessons learned on the road.
         </p>
 
@@ -68,7 +80,7 @@
         <p class="main-text" style="margin:0">
           Liz totally runs the show — especially when snacks are involved.
         </p>
-        <img class="inline-thumb" src="puppy_liz.jpg" alt="Liz as a puppy, supervising snacks">
+        <img class="inline-thumb" src="images/puppy_liz.jpg" alt="Liz as a puppy, supervising snacks">
       </div>
 
       <!-- Info about where we go to school currently -->
@@ -82,6 +94,17 @@
   <footer>
     <p id="footer-text">&copy; 2025 Rolling Through School | Learning on the go, one mile at a time</p>
   </footer>
+
+  <!-- mobile nav toggle -->
+  <script>
+    const btn = document.querySelector('.nav-toggle');
+    const nav = document.getElementById('site-nav');
+    btn?.addEventListener('click', () => {
+      const open = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!open));
+      nav.classList.toggle('open', !open);
+    });
+  </script>
 </body>
 
 </html>

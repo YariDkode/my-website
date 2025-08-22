@@ -496,3 +496,109 @@ footer {
   border: none;
 }
 
+/* === NAVBAR ENHANCEMENTS (logo + spacing + mobile toggle) === */
+.main-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.main-nav .brand {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.brand-logo {
+  width: 28px;
+  height: 28px;
+  display: block;
+  border: 0;
+}
+
+.main-nav ul {
+  /* keep your existing styles, but allow toggle control on mobile */
+  align-items: center;
+}
+
+/* sub-tle active page cue for accessibility */
+.main-nav a[aria-current="page"] {
+  outline: 2px solid #ffffffaa;
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+/* hamburger button hidden on desktop */
+.nav-toggle {
+  display: none;
+  background: transparent;
+  color: #fff;
+  border: 1px solid #fff;
+  padding: .35rem .6rem;
+  border-radius: .375rem;
+  font-size: 1rem;
+}
+
+/* keep links off the phone's edges and allow slide-down menu */
+@media (max-width: 720px) {
+  .nav-toggle {
+    display: inline-block;
+  }
+
+  .main-nav {
+    position: relative;
+  }
+
+  .main-nav ul {
+    position: absolute;
+    inset: 48px 1rem auto 1rem;
+    /* side padding on phones */
+    display: none;
+    flex-direction: column;
+    gap: .5rem;
+    background: var(--brand);
+    border-radius: .5rem;
+    padding: .75rem;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, .15);
+  }
+
+  .main-nav ul.open {
+    display: flex;
+  }
+}
+
+/* add small breathing room so content isn't glued to edges on phones */
+@media (max-width: 480px) {
+  body {
+    padding: 0 .5rem .5rem;
+  }
+
+  .main-nav {
+    margin: .25rem 0 1rem;
+  }
+}
+
+/* === GALLERY POLISH (keeps images nicely filled) === */
+.gallery .thumb img {
+  margin: auto;
+  object-fit: cover;
+  /* already present above, but re-asserted for thumbs */
+  border-radius: 8px;
+}
+
+/* === Brand text visibility rules === */
+/* hide the nav brand text on the HOME page only (logo still shows) */
+.home .brand span {
+  display: none;
+}
+
+/* hide brand text on small screens everywhere to save space */
+@media (max-width: 600px) {
+  .brand span {
+    display: none;
+  }
+}
