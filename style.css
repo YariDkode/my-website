@@ -394,7 +394,7 @@ footer {
 }
 
 
-/* Gallery layout tweak for auto fit */
+/* Gallery layout for auto fit */
 .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -432,7 +432,7 @@ footer {
   margin-top: 0.5rem;
 }
 
-/* --- Expenses Table Styling (Matches Site Brand) --- */
+/* --- Expenses Table Styling (to match the site) --- */
 .expenses-table {
   width: 100%;
   border-collapse: collapse;
@@ -471,7 +471,7 @@ footer {
   /* light purple to match */
 }
 
-/* --- Responsive Video Section Styling (Matches Site Brand) --- */
+/* --- Responsive Video Section Styling --- */
 .video-wrap {
   position: relative;
   padding-bottom: 50%;
@@ -521,7 +521,7 @@ footer {
 }
 
 .main-nav ul {
-  /* keep your existing styles, but allow toggle control on mobile */
+  /* to allow toggle control on mobile */
   align-items: center;
 }
 
@@ -571,7 +571,7 @@ footer {
   }
 }
 
-/* add small breathing room so content isn't glued to edges on phones */
+/* add padding so it does not fell at the edges on phones */
 @media (max-width: 480px) {
   body {
     padding: 0 .5rem .5rem;
@@ -582,16 +582,16 @@ footer {
   }
 }
 
-/* === GALLERY POLISH (keeps images nicely filled) === */
+/* === GALLERY POLISH  === */
 .gallery .thumb img {
   margin: auto;
   object-fit: cover;
-  /* already present above, but re-asserted for thumbs */
+  /* re-asserted for thumbs */
   border-radius: 8px;
 }
 
 /* === Brand text visibility rules === */
-/* hide the nav brand text on the HOME page only (logo still shows) */
+/* hide the nav brand text on the HOME page only but still show logo */
 .home .brand span {
   display: none;
 }
@@ -604,6 +604,8 @@ footer {
 }
 
 /* only when the dropdown is open on small screens, push content down by the dropdown's height */
-@media (max-width: 720px){
-  body.nav-open main { margin-top: var(--navDrop, 0); }
+@media (max-width: 720px) {
+  body.nav-open main {
+    margin-top: var(--navDrop, 0);
+  }
 }
