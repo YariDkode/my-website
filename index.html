@@ -99,11 +99,23 @@
   <script>
     const btn = document.querySelector('.nav-toggle');
     const nav = document.getElementById('site-nav');
+
+    function setDropSpacer() {
+      // measure the dropdown height (when visible)
+      const h = nav.classList.contains('open') ? nav.getBoundingClientRect().height : 0;
+      document.documentElement.style.setProperty('--navDrop', h + 'px');
+      document.body.classList.toggle('nav-open', h > 0);
+    }
+
     btn?.addEventListener('click', () => {
       const open = btn.getAttribute('aria-expanded') === 'true';
       btn.setAttribute('aria-expanded', String(!open));
       nav.classList.toggle('open', !open);
+      setDropSpacer();
     });
+
+    // reset spacer on resize/orientation changes
+    window.addEventListener('resize', setDropSpacer);
   </script>
 </body>
 

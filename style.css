@@ -602,3 +602,8 @@ footer {
     display: none;
   }
 }
+
+/* only when the dropdown is open on small screens, push content down by the dropdown's height */
+@media (max-width: 720px){
+  body.nav-open main { margin-top: var(--navDrop, 0); }
+}
